@@ -5,4 +5,4 @@
     <li><strong>Tipo:</strong> Varias preguntas</li>
     <li><strong>Tiempo estimado:</strong> 1 Minuto(s) por pregunta</li>
 </ul>
-<a href="<?php echo site_url('survey'); ?>" class="btn btn-outline-primary">Empezar</a>
+<a href="<?php echo site_url('survey/question'); ?>" class="btn btn-outline-primary">Empezar</a>
