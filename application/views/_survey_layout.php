@@ -22,6 +22,12 @@
         <?php $this->load->view($subview); ?>
       </div>
     </main>
+    <footer class="text-center">
+      <div class="container">
+        <hr>
+        Copyright &copy; <?php echo date('Y') ?>, BringSurvey
+      </div>
+    </footer>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
