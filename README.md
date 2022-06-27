@@ -9,3 +9,6 @@ v0.2.0:
 
 v0.3.0:
 - added view for surveys results
+
+v0.4.0:
+- added to surveys results most used social network by age range
