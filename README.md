@@ -12,3 +12,7 @@ v0.3.0:
 
 v0.4.0:
 - added to surveys results most used social network by age range
+
+v0.4.1:
+- hot fix column name in array from survey results
+- improving the description of the survey results 
