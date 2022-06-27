@@ -32,6 +32,7 @@ class Survey extends CI_Controller {
         $data['get_avg_social_network'] = $this->survey_m->get_avg_social_network();
         $data['get_favorite_social_network'] = $this->survey_m->get_favorite_social_network();
         $data['get_less_dear_social_network'] = $this->survey_m->get_less_dear_social_network();
+        $data['get_most_used_social_network_by_age_range'] = $this->survey_m->get_most_used_social_network_by_age_range();
         $data['subview'] = 'survey_results';
         $this->load->view('_survey_layout', $data);
     }

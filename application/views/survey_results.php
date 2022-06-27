@@ -9,4 +9,14 @@
     <li><strong>TikTok:</strong> <?php echo sprintf("%.2f", $get_avg_social_network->avg_tt); ?> </li>
     <li><strong>Red Social Favorita: </strong> <?php echo $get_favorite_social_network->favorite_social_network; ?> </li>
     <li><strong>Red Social Menos Querida: </strong> <?php echo $get_less_dear_social_network->less_dear_social_network; ?> </li>
+    <li><strong>Red Social mas usada por Rango de Edad:</strong></li>
+    <?php
+    foreach ($get_most_used_social_network_by_age_range as $key => $value) {
+        ?>
+
+        <li><strong><?php echo $value['name_social_network']; ?></strong> <?php echo $value['total']; ?> <?php echo $value['age']; ?></li>
+        
+        <?php
+    }
+    ?>
 </ul>
