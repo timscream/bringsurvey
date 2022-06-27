@@ -33,7 +33,7 @@
     <label class="form-text-label" for="choice4">
         Red Social favorita
     </label>
-    <select class="form-text-input" name="select_social_network_respondent" id="select_choice4" value="">
+    <select class="form-text-input" name="select_favorite_social_network_respondent" id="select_choice4" value="">
         <option value="FB">Facebook</option>
         <option value="WA">WhatsApp</option>
         <option value="TW">Twitter</option>
@@ -46,23 +46,23 @@
     <label class="form-text-label" for="choice5">
         Facebook
     </label>
-    <input class="form-text-input" type="number" name="input_email_respondent" id="input_choice5" value="" min="0" max="24">
+    <input class="form-text-input" type="number" name="input_avg_time_fb" id="input_choice5" value="" min="0" max="24">
     <label class="form-text-label" for="choice6">
         WhatsApp
     </label>
-    <input class="form-text-input" type="number" name="input_email_respondent" id="input_choice6" value="" min="0" max="24">
+    <input class="form-text-input" type="number" name="input_avg_time_wa" id="input_choice6" value="" min="0" max="24">
     <label class="form-text-label" for="choice7">
         Twitter
     </label>
-    <input class="form-text-input" type="number" name="input_email_respondent" id="input_choice7" value="" min="0" max="24">
+    <input class="form-text-input" type="number" name="input_avg_time_tw" id="input_choice7" value="" min="0" max="24">
     <label class="form-text-label" for="choice8">
         Instagram
     </label>
-    <input class="form-text-input" type="number" name="input_email_respondent" id="input_choice8" value="" min="0" max="24">
+    <input class="form-text-input" type="number" name="input_avg_time_ig" id="input_choice8" value="" min="0" max="24">
     <label class="form-text-label" for="choice9">
         Tiktok
     </label>
-    <input class="form-text-input" type="number" name="input_email_respondent" id="input_choice9" value="" min="0" max="24">
+    <input class="form-text-input" type="number" name="input_avg_time_tt" id="input_choice9" value="" min="0" max="24">
 </div>
 <input type="submit" value="Enviar" class="btn btn-primary mt-3">
 </form>
