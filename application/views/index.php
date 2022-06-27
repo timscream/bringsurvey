@@ -6,3 +6,5 @@
     <li><strong>Tiempo estimado:</strong> 1 Minuto </li>
 </ul>
 <a href="<?php echo site_url('survey/question'); ?>" class="btn btn-outline-primary">Empezar</a>
+<br>
+<a href="<?php echo site_url('survey/survey_results'); ?>" class="btn btn-outline-primary">Ver Estadisticas</a>

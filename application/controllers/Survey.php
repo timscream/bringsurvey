@@ -17,6 +17,7 @@ class Survey extends CI_Controller {
 
     public function question(){
 
+        $data['social_networks'] = $this->survey_m->get_social_networks();
         $data['subview'] = 'question';
         $this->load->view('_survey_layout', $data);
     }
@@ -38,17 +39,30 @@ class Survey extends CI_Controller {
         $this->load->view('_survey_layout', $data);
     }
 
-    public function process(){
+    public function add(){
 
-        $email_respondent = $this->input->post('input_email_respondent');
-        $age_respondent = $this->select->post('select_age_respondent');
-        $genere_respondent = $this->select->post('select_genere_respondent');
-        $social_network_respondent = $this->select->post('select_favorite_social_network_respondent');
-        $avg_time_fb = $this->input->post('input_avg_time_fb');
-        $avg_time_wa = $this->input->post('input_avg_time_wa');
-        $avg_time_tw = $this->input->post('input_avg_time_tw');
-        $avg_time_tw = $this->input->post('input_avg_time_ig');
-        $avg_time_tw = $this->input->post('input_avg_time_tt');
+        $rules = $this->survey_m->rules;
+        $this->form_validation->set_rules($rules);
+
+        if($this->form_validation->run() == TRUE){
+
+            $survey_data_form = [
+                'email_respondent' => $this->input->post('input_email_respondent'),
+                'age' => $this->input->post('select_age_respondent'),
+                'gender' => $this->input->post('select_genere_respondent'),
+                'favorite_social_network' => $this->input->post('select_social_network_respondent'),
+                'avg_fb' => $this->input->post('input_avg_fb'),
+                'avg_wa' => $this->input->post('input_avg_wa'),
+                'avg_tw' => $this->input->post('input_avg_tw'),
+                'avg_ig' => $this->input->post('input_avg_ig'),
+                'avg_tt' => $this->input->post('input_avg_tt')
+            ];
+
+            $this->survey_m->save_survey($survey_data_form);
+            redirect('survey/final', 'refresh');
+        }
+
+        redirect('index.php', 'refresh');
     }
 }
 
