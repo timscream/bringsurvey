@@ -16,3 +16,8 @@ v0.4.0:
 v0.4.1:
 - hot fix column name in array from survey results
 - improving the description of the survey results 
+
+v0.5.1:
+- navigation between screens is improved
+- calculation errors are corrected in the statistics of the surveys
+- the form information is validated before being processed by the server
