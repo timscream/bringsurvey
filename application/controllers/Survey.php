@@ -26,6 +26,14 @@ class Survey extends CI_Controller {
         $data['subview'] = 'final';
         $this->load->view('_survey_layout', $data);
     }
+
+    public function survey_results(){
+
+        $data['count_surveys_completed'] = $this->survey_m->get_count_surveys_completed();
+        $data['get_avg_social_network'] = $this->survey_m->get_avg_social_network();
+        $data['subview'] = 'survey_results';
+        $this->load->view('_survey_layout', $data);
+    }
 }
 
 /* End of file survey.php */
