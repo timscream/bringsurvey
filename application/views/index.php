@@ -3,6 +3,6 @@
 <ul>
     <li><strong>Numero de preguntas</strong></li>
     <li><strong>Tipo:</strong> Varias preguntas</li>
-    <li><strong>Tiempo estimado:</strong> 1 Minuto(s) por pregunta</li>
+    <li><strong>Tiempo estimado:</strong> 1 Minuto </li>
 </ul>
 <a href="<?php echo site_url('survey/question'); ?>" class="btn btn-outline-primary">Empezar</a>
