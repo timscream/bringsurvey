@@ -70,3 +70,5 @@
     <input required class="form-text-input" type="number" name="input_avg_tt" id="input_choice9" value="" min="0" max="24">
 </div>
 <input type="submit" value="Enviar" class="btn btn-primary mt-3">
+<br>
+<a href="<?php echo site_url('index.php'); ?>" class="btn btn-outline-primary">Ir al Inicio</a>
