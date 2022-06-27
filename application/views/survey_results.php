@@ -14,7 +14,7 @@
     foreach ($get_most_used_social_network_by_age_range as $key => $value) {
         ?>
 
-        <li><strong><?php echo $value['name_social_network']; ?></strong> <?php echo $value['total']; ?> <?php echo $value['age']; ?></li>
+        <li><strong><?php echo $value['name_social_network']; ?></strong> <?php echo $value['total']; ?> <?php echo $value['age_range']; ?></li>
         
         <?php
     }
