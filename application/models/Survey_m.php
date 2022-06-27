@@ -3,6 +3,54 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Survey_m extends CI_Model {
 
+    public $rules = array(
+        'input_email_respondent' => array(
+            'field' => 'input_email_respondent',
+            'label' => 'Correo del participante',
+            'rules' => 'trim|required'
+        ),
+        'select_age_respondent' => array(
+            'field' => 'select_age_respondent',
+            'label' => 'Edad',
+            'rules' => 'trim|required'
+        ),
+        'select_genere_respondent' => array(
+            'field' => 'select_genere_respondent',
+            'label' => 'Sexo',
+            'rules' => 'trim|required'
+        ),
+        'select_social_network_respondent' => array(
+            'field' => 'select_social_network_respondent',
+            'label' => 'Red Social favorita',
+            'rules' => 'trim|required'
+        ),
+        'input_avg_fb' => array(
+            'field' => 'input_avg_fb',
+            'label' => 'Facebook',
+            'rules' => 'trim|required'
+        ),
+        'input_avg_wa' => array(
+            'field' => 'input_avg_wa',
+            'label' => 'WhatsApp',
+            'rules' => 'trim|required'
+        ),
+        'input_avg_tw' => array(
+            'field' => 'input_avg_tw',
+            'label' => 'Twitter',
+            'rules' => 'trim|required'
+        ),
+        'input_avg_ig' => array(
+            'field' => 'input_avg_ig',
+            'label' => 'Instagram',
+            'rules' => 'trim|required'
+        ),
+        'input_avg_tt' => array(
+            'field' => 'input_avg_tt',
+            'label' => 'Tiktok',
+            'rules' => 'trim|required'
+        )
+    );
+
     public function get_count_surveys_completed(){
 
         return $this->db->count_all('surveys_completed');
@@ -16,8 +64,9 @@ class Survey_m extends CI_Model {
 
     public function get_favorite_social_network(){
 
-        $this->db->select('`favorite_social_network`, count(favorite_social_network) as total');
-        $this->db->from('surveys_completed');
+        $this->db->select('sn.name_social_network, `favorite_social_network`, count(favorite_social_network) as total');
+        $this->db->from('social_network sn, surveys_completed');
+        $this->db->where('favorite_social_network=sn.internalid');
         $this->db->group_by('favorite_social_network');
         $this->db->order_by('total', 'DESC');
         $this->db->limit(1);
@@ -26,8 +75,9 @@ class Survey_m extends CI_Model {
 
     public function get_less_dear_social_network(){
 
-        $this->db->select('`favorite_social_network` as less_dear_social_network, count(favorite_social_network) as total');
-        $this->db->from('surveys_completed');
+        $this->db->select('sn.name_social_network as less_dear_social_network, `favorite_social_network`, count(favorite_social_network) as total');
+        $this->db->from('social_network sn, surveys_completed');
+        $this->db->where('favorite_social_network=sn.internalid');
         $this->db->group_by('favorite_social_network');
         $this->db->order_by('total', 'ASC');
         $this->db->limit(1);
@@ -64,6 +114,18 @@ class Survey_m extends CI_Model {
         }
 
         return $filter_social_network;
+    }
+
+    public function save_survey($data){
+
+        $result = $this->db->insert('surveys_completed',$data);
+
+        return $result ? TRUE : FALSE;
+    }
+
+    public function get_social_networks(){
+
+        return $this->db->get('social_network')->result();
     }
 }
 
