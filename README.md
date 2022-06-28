@@ -21,3 +21,6 @@ v0.5.1:
 - navigation between screens is improved
 - calculation errors are corrected in the statistics of the surveys
 - the form information is validated before being processed by the server
+
+v0.5.2:
+- backup of the database structure is added
