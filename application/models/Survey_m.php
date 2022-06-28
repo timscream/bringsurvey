@@ -99,7 +99,7 @@ class Survey_m extends CI_Model {
 
     protected function filter_most_used_social_network_by_age_range($array_result){
 
-        static $filter_social_network = new stdClass();
+        $filter_social_network = new stdClass();
 
         foreach ($array_result as $key => $value) {
 
